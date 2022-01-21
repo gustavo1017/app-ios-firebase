@@ -12,6 +12,7 @@ class AuthViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var recuperarTextField: UITextField!
     @IBOutlet weak var registrarBoton: UIButton!
     @IBOutlet weak var iniciarBoton: UIButton!
     override func viewDidLoad() {
@@ -50,6 +51,26 @@ class AuthViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func recuperarClave(_ sender: Any) {
+        let auth = Auth.auth()
+        
+        auth.sendPasswordReset(withEmail: recuperarTextField.text!) {
+            (error) in
+            if self.recuperarTextField.text?.isEmpty==true{
+                let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "Error: dadasassa", preferredStyle: .alert)
+                resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(resetFailedAlert, animated: true, completion: nil)
+            }
+            if error != nil && self.recuperarTextField.text?.isEmpty==false{
+                let resetEmailAlertSent = UIAlertController(title: "Reset Email Sent", message: "Reset email has been sent to your login email, please follow the instructions in the mail to reset your password", preferredStyle: .alert)
+                resetEmailAlertSent.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(resetEmailAlertSent, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
     
 
 }

@@ -72,6 +72,32 @@
                                 </subviews>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recuperar Clave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWl-Th-uAA">
+                                <rect key="frame" x="76" y="364" width="125" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5UL-CD-y2O">
+                                <rect key="frame" x="76" y="413" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="recuperarClave:" destination="acX-px-GO5" eventType="editingDidEnd" id="ZUb-9H-Ico"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8h-ZP-GeP">
+                                <rect key="frame" x="76" y="468" width="91" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Recuperar"/>
+                                <connections>
+                                    <action selector="recuperarClave:" destination="acX-px-GO5" eventType="touchUpInside" id="As4-u3-VZm"/>
+                                    <action selector="recuperarClave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HjY-Ab-CWh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,10 +114,12 @@
                         <outlet property="emailTextField" destination="0JZ-XK-b9e" id="cHE-ga-IfX"/>
                         <outlet property="iniciarBoton" destination="7qx-Kk-UuV" id="93x-P6-Ycy"/>
                         <outlet property="passwordTextField" destination="Cx6-ha-35n" id="Dht-Rk-R65"/>
+                        <outlet property="recuperarTextField" destination="5UL-CD-y2O" id="meg-58-gWU"/>
                         <outlet property="registrarBoton" destination="2qu-xc-I8F" id="cjx-5L-OsK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="acX-px-GO5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="15.942028985507248" y="125.89285714285714"/>
         </scene>
